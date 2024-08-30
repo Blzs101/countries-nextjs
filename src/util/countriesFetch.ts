@@ -1,13 +1,13 @@
 import { cache } from "react";
 
 export const fetchData = cache(async () => {
-	const response = await fetch("https://restcountries.com/v3.1/all");
-	const data: elementType[] = await response.json();
-
-	return data;
+	const response: elementType[] = await fetch(
+		"https://restcountries.com/v3.1/all"
+	).then((res) => res.json());
+	return response;
 });
 
-type elementType = {
+export type elementType = {
 	flags: {
 		svg: string;
 		alt: string;
