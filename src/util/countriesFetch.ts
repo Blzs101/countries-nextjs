@@ -19,7 +19,7 @@ export type elementType = {
 	population: number;
 	region: string;
 	capital: string[];
-	subRegion: string;
+	subregion: string;
 	tld: string[];
 	languages: string;
 	currencies: {

@@ -37,7 +37,7 @@ export default async function page({ params }: { params: { id: string } }) {
                                 <p className="mb-2 font-bold">Native Name: <span className="text-dark-grey-input">{country?.name.nativeName === undefined ? "Data not found" : Object.values(country?.name.nativeName)[0].common}</span></p>
                                 <p className="mb-2 font-bold">Populaton: <span className="text-dark-grey-input">{country?.population.toLocaleString("en-US") ?? "Data not found"}</span></p>
                                 <p className="mb-2 font-bold">Region: <span className="text-dark-grey-input">{country?.region ?? "Data not found"}</span></p>
-                                <p className="mb-2 font-bold">Sub Region: <span className="text-dark-grey-input">{country?.subRegion ?? "Data not found"}</span></p>
+                                <p className="mb-2 font-bold">Sub Region: <span className="text-dark-grey-input">{country?.subregion ?? "Data not found"}</span></p>
                                 <p className="mb-2 font-bold">Capital:<span className="text-dark-grey-input"> {country?.capital ?? "Data not found"}</span></p>
                                 <p className="mb-2 font-bold">Top Level Domain: <span className="text-dark-grey-input">{country?.tld[0] ?? "Data not found"}</span></p>
                                 <p className="mb-2 font-bold">Currencies: <span className="text-dark-grey-input"> {country.currencies === undefined ? "Data not found" : Object.values(country?.currencies).map((currencies: { name: string }) => currencies.name).toLocaleString()}</span></p>
