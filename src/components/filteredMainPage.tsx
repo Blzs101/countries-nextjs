@@ -86,6 +86,7 @@ export default function FilteredMainPage({ data }: { data: elementType[] }) {
                       .toLocaleLowerCase()
                       .replace(/\s/g, '')}`}
                     key={element.name.common}
+                    className=" h-[500px]"
                   >
                     <CountriesCard
                       img={element.flags.svg}
