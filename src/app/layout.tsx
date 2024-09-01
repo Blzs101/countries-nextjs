@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Countries",
-  description: "Find every country in the world with information about it with just one click",
+  description:
+    "Find every country in the world with information about it with just one click",
 };
 
 export default function RootLayout({
@@ -18,7 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} dark:text-white dark:bg-very-dark-blue-bg text-black bg-very-light-grey-bg inset-0 min-h-screen  overflow-auto `}>
+      <body
+        className={`${inter.className} inset-0 min-h-screen overflow-auto bg-very-light-grey-bg text-black dark:bg-very-dark-blue-bg dark:text-white`}
+      >
         <ThemeContext>
           <Navbar />
           {children}
