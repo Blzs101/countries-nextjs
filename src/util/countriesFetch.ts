@@ -1,11 +1,9 @@
-import { cache } from "react";
-
-export const fetchData = cache(async () => {
+export const fetchData = async () => {
   const response: elementType[] = await fetch(
     "https://restcountries.com/v3.1/all",
   ).then((res) => res.json());
   return response;
-});
+};
 
 export type elementType = {
   flags: {
