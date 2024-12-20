@@ -5,10 +5,11 @@ import Link from "next/link";
 import { fetchCountries } from "@/util/countresFetch";
 
 export async function generateMetadata({
-  params: { id },
+  params,
 }: {
   params: { id: string };
 }) {
+  const { id } = await params;
   const countries = await fetchCountries()
   const country = countries.find(
     (c) => c.name.common.toLowerCase().replace(/\s/g, "") === id,
@@ -22,10 +23,11 @@ export async function generateMetadata({
   };
 }
 export default async function page({ params }: { params: { id: string } }) {
+  const { id } = await params;
   const countries = await fetchCountries()
   const country = countries.find(
-    (country: elementType) =>
-      country.name.common.toLowerCase().replace(/\s/g, "") === params.id,
+     (country: elementType) =>
+      country.name.common.toLowerCase().replace(/\s/g, "") === id,
   );
   return (
     <main className="mx-4 mb-4 h-auto w-auto overflow-hidden md:mx-8">

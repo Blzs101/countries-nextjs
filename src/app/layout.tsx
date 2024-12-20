@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import ThemeContext from "@/context/ThemeContext";
 import Navbar from "@/components/Navbar";
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         className={`${inter.className} inset-0 min-h-screen overflow-auto bg-very-light-grey-bg text-black dark:bg-very-dark-blue-bg dark:text-white`}
       >
         <ThemeContext>
+          <NextTopLoader showSpinner={false} color="#3b82f6"  />
           <Navbar />
           {children}
         </ThemeContext>
