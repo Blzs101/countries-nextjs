@@ -4,11 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { fetchCountries } from "@/util/countresFetch";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { id: string };
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }>  }) {
   const { id } = await params;
   const countries = await fetchCountries()
   const country = countries.find(
@@ -22,7 +18,7 @@ export async function generateMetadata({
     },
   };
 }
-export default async function page({ params }: { params: { id: string } }) {
+export default async function page({ params }: { params: Promise<{ id: string }>  }) {
   const { id } = await params;
   const countries = await fetchCountries()
   const country = countries.find(
