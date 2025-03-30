@@ -19,7 +19,7 @@ export default function FilteredMainPage({ data }: { data: elementType[] }) {
 
   return (
     <>
-      <div className="flex-col mx-5 gap-8 pb-4 md:flex">
+      <div className="flex-col mx-5 gap-8 pb-4 md:flex md:flex-row">
         <form
           className="flex w-auto bg-very-dark-grey-bg text-black dark:bg-dark-blue-element dark:text-white md:mr-auto md:w-1/3"
           onSubmit={(e: React.FormEvent<HTMLElement>) => e.preventDefault()}
