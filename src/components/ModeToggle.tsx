@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function ModeToggle() {
   const { theme, setTheme } = useTheme();
 
-  const changeTheme = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-  };
+  const changeTheme = () => (
+    theme === "light" ? setTheme("dark") : setTheme("light")
+  );
   return (
     <button className="flex items-center justify-center" onClick={changeTheme}>
       <Image

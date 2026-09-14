@@ -9,6 +9,10 @@ export async function fetchCountries() {
     })
     const countriesAll = await data.json();
 
+    if (countriesAll.success === false) {
+        return [] as elementType[];
+    }
+    
     return countriesAll as elementType[];
 
 }
